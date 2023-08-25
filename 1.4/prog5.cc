@@ -4,8 +4,7 @@ int main()
     int currVal = 0, val = 0;
     if (std::cin >> currVal) {
         int cnt = 1;
-        std::cout << "here" << std::endl;
-        while(std::cin >> currVal) {
+        while(std::cin >> val) {
             if (val == currVal)
                 ++cnt;
             else {
