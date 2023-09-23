@@ -1,6 +1,7 @@
 #include <iostream>
 
 void printBit (int num) {
+    // ul1 || ul2; will return true as well as || is the  logical OR operator that checks both values from left to right and if the first is a non zero then it returns true or 1 and if it is 0 then it checks next variable repeating the process.
     int numBits = sizeof(num) * 8;
     for (int i = numBits - 1; i >= 0; i--) {
         int bitValue = (num >> i) & 1; // Extract the i-th bit
@@ -18,6 +19,8 @@ int main (int argc, char *argv[])
     printBit((ul1 | ul2));
     // ul1 && ul2; will return true as && operator is the logical AND operator and will check for first value not to be zero and then for the second and only return true or 1 if they are non zero values which they are.
     printBit((ul1 && ul2));
+    // ul1 || ul2; will return true as well as || is the  logical OR operator that checks both values from left to right and if the first is a non zero then it returns true or 1 and if it is 0 then it checks next variable repeating the process.
+    printBit((ul1 || ul2));
 
     return 0;
 }
