@@ -23,6 +23,8 @@ int main (int argc, char *argv[])
            case 'u':
                ++uCnt;
                break;
+           default:
+               std::cout << "Default" << std::endl;
        }
     }
 
