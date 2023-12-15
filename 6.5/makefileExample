@@ -1,0 +1,21 @@
+FLAGS = -std=c++14
+
+all: final
+
+final: main.o hello.o
+	@echo "linking and producing the final application"
+	gcc $(FLAGS) main.o hello.o -o final
+	@chmod +x final
+
+main.o: main.c
+	@echo "compiling the main file"
+	g++ $(FLAGS) -c main.c
+
+
+hello.o: hello.c
+	@echo "compiling the hello file"
+	g++ $(FLAGS) -c hello.c
+
+clean:
+	@echo "Removing all files but source code"
+	@rm *.o final
