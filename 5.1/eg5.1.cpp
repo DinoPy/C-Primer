@@ -1,0 +1,1 @@
+// a null statementis the equivanent of an empty block. They are useful when a statement is required by the syntax but the logic can be done elsewhere such as a loop. Alternatively a null statement is also a sigle ; which can replace an expression/statement;
