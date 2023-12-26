@@ -1,2 +1,0 @@
-// Reference parameters should be by default references to const as long as the function receiving the variables doesn't have logic to modify them.
-// When making a paramenter plain reference while it could be a reference to const the number of types that can be pased is reduced as some variables / literals are const. It would also cause the developer the belief that the function may modify the variable.

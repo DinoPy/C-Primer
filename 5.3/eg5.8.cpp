@@ -1,1 +1,0 @@
-// a dangling else is when we use nested ifs whose bodies are not incuded in a block anc also where the number of ifs isn't equal to the number of elses. a dangling if occurs when we have 2 ifs and we fwant the else to apply to the outer but based on the sequence of exectuion if would apply to the inner if.

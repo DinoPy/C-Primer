@@ -1,1 +1,0 @@
-// the elements of the array would be default initialized to either 0 if the array was defined outside a function scope or undefined if they were defined within they would be undefined. Either way this is not nocive to our program as we don't read the undefined values but we write them right away.
