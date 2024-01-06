@@ -1,0 +1,1 @@
+// If the return type of the mentioned functions would have been a non-reference type then within all functinos the object would be copied and the *this returned would no longer reference the same object.
