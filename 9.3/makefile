@@ -1,4 +1,4 @@
-FLAGS = -std=c++14  -o
+FLAGS = -std=c++20  -o
 
 target:
 	g++ $(FLAGS) $(name) $(name).cpp
