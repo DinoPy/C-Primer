@@ -7,17 +7,33 @@ using std::string;
 
 // won't be finished.
 
+struct fullMonths {
+   unsigned january = 1;
+   unsigned february = 2;
+   unsigned march = 3;
+   unsigned april = 4;
+   unsigned may = 5;
+   unsigned june = 6;
+   unsigned july = 7;
+   unsigned august = 8;
+   unsigned september = 9;
+   unsigned october = 10;
+   unsigned november = 11;
+   unsigned december = 12;
+};
+
 class Test {
 
   public:
     Test(string s) {
         if ( s.find_first_of(full_months) != string::npos) {
-
+            string::size_type first_white_space = s.find_first_of(' ');
+            string month = (s.substr(0, first_white_space)).replace(0, 1, std::to_string((char)tolower(s[0])));
+            cout << month << endl;
         }
         if ( s.find_first_of(shortened_months) != string::npos) {
-
+            cout << s << endl;
         }
-        cout << s << endl;
     }
 
     unsigned val1 = 0;
