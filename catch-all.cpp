@@ -1072,7 +1072,79 @@ void printError (bool c, std::string message) {
 
 
 // CLASSES
+//  Fundamental ideas behind classes are data abstraction and encapsulation.
+//      Data abstraction - programin & design technique that relies on the separation of the interface and implementation.
+//          Interface of a class - operations that the user of a class can execute.
+//          Implementation - includes the class data members, the bodies of the functions that constitute the interface and any functions needed to define
+//              the class that are not intended for general use.
+//      Encpasulation - enforces the separation of a class interface and implemetation. A class that is encapsulated hides the implementation - users of the class can use the interface.
+//      A class taht uses data abstraction and encapsulation defines an abstract data type. In an abstract data type, the class designer worries about how
+//          the class is implemented. Programmers who use the class need not know how the type works.
+//          They can instead think abstractly about what the type does.
+//
 
+// DEFINING ABSTRACT DATA TYPES
+//  Functions defined in class are implicitly inline.
+//  Defining member function
+//      Although every member must be declared inside its class, we can define a member function's body either inside or outside of the class body.
+//      When we call a member function we do so on behalf of the boject. When a function refers to members of the class it is refering implicitly to
+//          the members of the object on which the function was called.  When a function is called any data member used in the body is taken from the class.
+//          For example function isActive() { return isActive } will return the object.isActive property of the class.
+//      Member functions access the object on which they were called through an extra, implicit parameters named this.
+//          When we call a memebr function, this is initialized with the address of the object on which the function was invoked.
+//          For example: Sales_data::isbn(&total);
+//      Inside a member function, we can refer directly to the members of the object on which the function was was called. We do not have to use a
+//          member function access operator to use the members of the object to which this points. Any direct use of the member of the class is assumed to be
+//          an implicit reference through this. As if we'd say this -> bookNo to derefernnce the object and get the bookNo.
+//      It is illegal to definea parameter or variable named this.
+//
+//  Const member functions
+//      const that follows the parameter list = indicates that this pointer is a pointer to const. Member functions that use const in this way are const member functions.
+//      The purpose of const used after parameter list is to modify the type of the implicit this pointer. By default this is a const pointer to a non-cost version
+//          of the class type. The fact that this is a pointer to const means that cost memeber functions cannot change the object on which they are called.
+//      Objects that are const and references or pointers to const objects, may call only const member functions.
+//
+//  Class scope and member functions
+//      A member function can access a data member even if the data member is defined after the function itself (within a class). The compiler processes
+//          the classes in two steps. The member declarations are compiled first, after which the member function bodies if any are processed. This
+//          way member function bodies may use other members of their class regardless of where in the class those members appear.
+//
+//  Defining a member function outside a class
+//      As with any other function, when we define a member function outside the class body, the members's definition must match its declaration.
+//          That is, the return type, parameter list and name must match the declaration in the class body. If the member function was declared as
+//          a const member function, then the definition must also specify const after parameter list.
+//      The name of a member defined outsite the class must include the name of the class on which it is a member.
+//          Ex: return_type class_name::member_name(parameters) const { ... };
+//      Once the compiler sees the function name, the rest of the code is interpreted as being inside the scope of the class.
+//
+// Defining a function to return this object.
+//      Having a function "combine" that is intended to act likea  compound assignment operator += where the object on which the function is called
+//          represents the left-hand operand. The right-hand operand is passed as an explicit argument.
+//
+//      Sales_data& Sales_data::combine(const Sales_data &rhs) {
+//          units_sold += rhs.units_sold;
+//          revenue += rhs.revenue;
+//          return *this; return the object on which the functino was called.
+//      When our program calls total.combine(trans); the address of total is bound to the implicit this parameter and rhs is bound to trans.
+//          Thus, when combine executes units_sole += rhs.units_sold; the effect is to add total.units_sold and trans.units_sold, storing the
+//          result back to the total.units_sold.
+//
+//  Defining nonmember class-related functions
+//      Functions that are conceptually part of a class, but are not defined inside the class are tipically declared (but not defined) in the same header
+//          as the class itself.
+//      Ordinarily, nonmember functions that are part of the interface of a class should be declared in the same header as the class itself.
+//      Functions that do output (print) should do minimal formating so the user can decide how to format.
+//      By default copying a class object coies that object's members.
+//      A non-member class-related function is usually ment to work with the class objects. For example reading something to the object,
+//          printing from the object, working with more than one object.
+//      Non-member functions will take a class object as a reference so they won't be copied unless needed.
+//
+
+// CONSTRUCTORS
+//  Are class functions meant to initialize the data members of a class object.
+//  A constructor is run whenever an object of a class type is created. The choice of which constructor is called depends on how the object is being
+//  created and the arguments provided during the object's instantiation.
+//
 
 
 
